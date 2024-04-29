@@ -1,0 +1,63 @@
+.content-table {
+    border-collapse: collapse;
+    margin: auto;
+    font-size: 1.2em; /* Increased font size */
+    width: 90%; /* Adjusted width */
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    background-color: rgba(255, 255, 255, 0.9); /* White and slightly transparent background color */
+    border-radius: 10px; /* Added border radius */
+    margin-top: 20px; /* Added spacing between table and navbar */
+    padding: 20px; /* Added padding */
+    color: #033D58; /* Changed text color */
+}
+
+.content-table th,
+.content-table td {
+    padding: 15px;
+    border: none; /* Removed border */
+}
+
+.content-table thead tr {
+    background-color: #033D58; /* Changed background color */
+    color: #ffffff;
+    text-align: left;
+    font-weight: bold;
+}
+
+.content-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.content-table tbody tr:nth-of-type(even) {
+    background-color: #f7f7f7; /* Alternate row background color */
+}
+
+.content-table tbody tr:last-of-type {
+    border-bottom: 2px solid #03293B;
+}
+
+.priority-high {
+    color: red; /* Keep color unchanged */
+}
+
+.priority-medium {
+    color: orange; /* Keep color unchanged */
+}
+
+.priority-low {
+    color: green; /* Keep color unchanged */
+}
+
+.pagination {
+    text-align: center; /* Center the pagination */
+    margin-top: 20px; /* Add margin on top */
+  }
+  
+  .pagination button {
+    color: white; 
+    text-decoration: underline;
+    background-color: transparent;
+    border: none;
+  }
+  

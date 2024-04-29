@@ -1,38 +1,120 @@
-.App {
-  text-align: center;
+/* #A3BDED, #6991C7 */
+body {
+    background: linear-gradient(to bottom right,#09203f, #537895 ); /* Gradient background */
+    background-repeat: no-repeat; /* Prevent background from repeating */
+    background-attachment: fixed; /* Fixed background */
+    margin: 0; /* Remove default margin */
+    height: 100%; /* Set height to 100% */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Style for the table */
+.content-table {
+    border-collapse: collapse;
+    margin: auto;
+    font-size: 1.2em; /* Increased font size */
+    width: 90%; /* Adjusted width */
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    background-color: rgba(255, 255, 255, 0.9); /* White and slightly transparent background color */
+    border-radius: 10px; /* Added border radius */
+    margin-top: 20px; /* Added spacing between table and navbar */
+    padding: 20px; /* Added padding */
+    color: #033D58; /* Changed text color */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.content-table th,
+.content-table td {
+    padding: 15px;
+    border: none; /* Removed border */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.content-table thead tr {
+    background-color: #033D58; /* Changed background color */
+    color: #ffffff;
+    text-align: left;
+    font-weight: bold;
 }
 
-.App-link {
-  color: #61dafb;
+.content-table tbody tr {
+    border-bottom: 1px solid #dddddd;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.content-table tbody tr:nth-of-type(even) {
+    background-color: #f7f7f7; /* Alternate row background color */
+}
+
+.content-table tbody tr:last-of-type {
+    border-bottom: 2px solid #03293B;
+}
+
+/* Style for the priority text */
+.priority-high {
+    color: red; /* Keep color unchanged */
+}
+
+.priority-medium {
+    color: orange; /* Keep color unchanged */
+}
+
+.priority-low {
+    color: green; /* Keep color unchanged */
+}
+
+/* Style for the dropdown options */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #245aaf; /* Changed background color */
+    min-width: 160px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 5px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content option {
+    padding: 10px;
+    font-size: 1em;
+    color: white; /* Changed text color */
+}
+
+.dropdown-content option:hover {
+    background-color: #1e4a8a; /* Changed background color on hover */
+}
+
+/* Style for the search button */
+.search-btn {
+    background-color: #245aaf;
+    border: none;
+    color: white;
+    width: 100%; /* Set width to 100% initially */
+    max-width: 300px;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.search-btn:hover {
+    background-color: #1e4a8a;
+}
+
+/* Adjusted font size for small screens */
+@media (max-width: 768px) {
+    .search-input,
+    .dropdown {
+        width: calc(100% - 20px);
+        margin-right: 0;
+        margin-bottom: 10px;
+        font-size: 1em;
+    }
 }
