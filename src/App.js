@@ -4,6 +4,7 @@ import NavBar from './NavBar';
 import ProgressBar from './ProgressBar';
 import Table from './Table';
 import Cases from './data'; // Import the Cases data
+import cases from './data';
 
 const App = () => {
   const [filters, setFilters] = useState({
@@ -15,6 +16,38 @@ const App = () => {
 
   const [filteredCases, setFilteredCases] = useState(Cases); // Use the Cases data
   const [loading, setLoading] = useState(false);
+
+  const getdata = ()=>{
+    fetch('http://127.0.0.1:8000/fetch/', {
+      method: "GET",
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+    .then(response => response.json())
+  .then(data => {
+    var obj = JSON.parse(data)
+    if(data)
+  setFilteredCases(obj)
+}
+)
+
+  .catch(error => console.error(error));
+  }
+
+  // useEffect(() => {
+  //   fetch('http://127.0.0.1:8000/fetch/', {
+  //     method: "GET",
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //     },
+  //   })
+  //   .then(response => response.json())
+  // .then(data => {console.log(data);
+  //   if(data)
+  // setFilteredCases(data)})
+  // .catch(error => console.error(error));
+  // }, [cases]);
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -41,6 +74,7 @@ const App = () => {
 
   // Apply filters
   useEffect(() => {
+    console.log(typeof(cases));
     const filteredData = Cases.filter((caseData) => {
       const searchString = filters.search.toLowerCase();
       return (
@@ -68,10 +102,11 @@ const App = () => {
         handleInputChange={handleInputChange}
         handleFilterSelect={handleFilterSelect}
         handleSearch={handleSearch}
-        loading={loading}
+        loading={loading}ß
       />
       <ProgressBar loading={loading} />
-      <Table  cases={Cases} filteredCases={filteredCases} />
+      <Table filteredCases={filteredCases} />
+      <button onClick={getdata}>Fetch Data</button>
     </div>
   );
 };

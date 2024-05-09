@@ -1,7 +1,7 @@
 .content-table {
     border-collapse: collapse;
     margin: auto;
-    font-size: 1.2em; /* Increased font size */
+    font-size: 1em; /* Increased font size */
     width: 90%; /* Adjusted width */
     overflow: hidden;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
